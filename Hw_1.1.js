@@ -1,6 +1,15 @@
-const currentMaxValue = 4589;
-let reverseMaxValue = currentMaxValue.toString().split("").reverse().join("");
-let ReverseMaxValueNumber = Number(reverseMaxValue);
+const userNames = ["Seraphina Rivers", "Orion Stormwalker", "Luna Wildeyes"];
+const SeparateUserNames = userNames.map(userName => userName.split(" "))
+const Initials =
+    SeparateUserNames.map(userName =>
+        userName
+        [0]
+            .charAt(0)
+            .toUpperCase() + (".") +
+        userName
+        [1]
+            .charAt(0)
+            .toUpperCase() + ("."));
 
-console.log(ReverseMaxValueNumber);
-console.log(typeof ReverseMaxValueNumber);
+Initials.sort() 
+console.log(Initials); 
