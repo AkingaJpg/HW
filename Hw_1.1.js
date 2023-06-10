@@ -1,4 +1,4 @@
-const userNames = ["Seraphina Rivers", "Orion Stormwalker", "Luna Wildeyes"];
+const userNames = ["Seraphina Rivers", "Orion Stormwalker", "Luna Willdeyes"];
 const SeparateUserNames = userNames.map(userName => userName.split(" "))
 const Initials =
     SeparateUserNames.map(userName =>
