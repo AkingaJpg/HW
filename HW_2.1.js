@@ -1,4 +1,4 @@
- function TimeCalc(startDate, endDate, unit) {
+function TimeCalc(startDate, endDate, unit) {
     let start = new Date(startDate);
     let end = new Date(endDate);
     let timeDiff = Math.abs(start-end);
@@ -23,4 +23,8 @@
  }
  return result.toString() + " " + unit;
  }
- console.log (TimeCalc ('31 Jan 2022', '04 Feb 2021', 'days')); 
+
+ module.exports = TimeCalc
+
+
+ // console.log (TimeCalc ('31 Jan 2022', '04 Feb 2021', 'days')); 
