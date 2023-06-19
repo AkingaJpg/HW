@@ -4,8 +4,9 @@ const priceData = {
     oRAngGEs: '48.7584'
 };
 
-function Optimizer(productsprice) {
+function optimizer(productsprice) {
     let result = Object.fromEntries(Object.entries(productsprice).map(([key, value]) => [key.toLowerCase(), Number(value).toFixed(2)]));
     return result;
 }
-console.log(Optimizer(priceData));
+console.log(optimizer(priceData));
+

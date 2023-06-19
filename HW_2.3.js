@@ -1,9 +1,18 @@
 // sum uneven + numbers
 
 function recursiveOddSumTo(number) {
-    if (number <= 0) { return 0; }
-    if (number % 2 === 1) { return recursiveOddSumTo(number - 2) + number; }
-    if (number % 2 === 0) { return recursiveOddSumTo(number - 1); }
+    if (number <= 0) { 
+        return 0; 
+    }
+    if (number % 2 === 1) { 
+        return 
+        recursiveOddSumTo(number - 2) 
+        + number; 
+    }
+    if (number % 2 === 0) { 
+        return 
+        recursiveOddSumTo(number - 1); 
+    }
 }
 
 console.log(recursiveOddSumTo(1)) // 1
@@ -15,6 +24,8 @@ function iterativeOddSumTo(number) {
         if (i % 2 === 1) { sum = sum + i; }
     }
     return sum;
-};
+}
+
 console.log(iterativeOddSumTo(1)) // 1       
 console.log(iterativeOddSumTo(10)) // 25
+

@@ -1,7 +1,5 @@
-function TimeCalc(startDate, endDate, unit) {
-    let start = new Date(startDate);
-    let end = new Date(endDate);
-    let timeDiff = Math.abs(start-end);
+function durationBetweenDates(startDate, endDate, unit) {
+    const timeDiff = Math.abs(new Date(startDate)-new Date(endDate));
     let result; 
 
    switch (unit) {
@@ -24,7 +22,9 @@ function TimeCalc(startDate, endDate, unit) {
  return result.toString() + " " + unit;
  }
 
- module.exports = TimeCalc
+ //module.exports = TimeCalc
 
 
- // console.log (TimeCalc ('31 Jan 2022', '04 Feb 2021', 'days')); 
+ console.log (durationBetweenDates ('31 Jan 2022', '04 Feb 2021', 'days')); 
+
+ 
