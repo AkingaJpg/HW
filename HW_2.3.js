@@ -1,6 +1,9 @@
 // sum uneven + numbers
 
 function recursiveOddSumTo(number) {
+    if (typeof number !== 'number' || isNaN(number)) { 
+        throw new Error('Function argument is not a number.'); 
+    }
     if (number <= 0) { 
         return 0; 
     }
