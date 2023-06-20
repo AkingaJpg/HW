@@ -1,19 +1,21 @@
 function durationBetweenDates(startDate, endDate, unit) {
-    const timeDiff = Math.abs(new Date(startDate)-new Date(endDate));
+    unit = unit || "emptyValue";
+
+    const timeDiff = Math.abs(new Date(startDate)-new Date(endDate))/1000;
     let result; 
 
    switch (unit) {
       case 'days':
-        result = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        result = Math.floor(timeDiff / (60 * 60 * 24));
         break;
       case 'hours':
-        result = Math.floor(timeDiff / (1000 * 60 * 60));
+        result = Math.floor(timeDiff / (60 * 60));
         break;
       case 'minutes':
-        result = Math.floor(timeDiff / (1000 * 60));
+        result = Math.floor(timeDiff / (60));
         break;
       case 'seconds':
-        result = Math.floor(timeDiff / 1000);
+        result = Math.floor(timeDiff);
         break;
       default:
         result = 'Invalid unit';
@@ -25,6 +27,6 @@ function durationBetweenDates(startDate, endDate, unit) {
  //module.exports = TimeCalc
 
 
- console.log (durationBetweenDates ('31 Jan 2022', '04 Feb 2021', 'days')); 
+ console.log (durationBetweenDates ('23 Jan 2022', '25 Jan 2022', 'days')); 
 
  
