@@ -2,7 +2,6 @@ function someFunction() {
     let mau = ("Cat meows 🐈")
     console.log(arguments);
     console.log(mau);
-    return;
 }
 
 
@@ -17,3 +16,4 @@ function slower(func, seconds) {
 let slowedSomeFunction = slower(someFunction, 5);
 
 slowedSomeFunction(1)
+

@@ -34,3 +34,4 @@ let securedSelfDescribeMyMood = myDog.plans.bind(myDog);
 setTimeout(securedSelfIntroduce, 1000); 
 setTimeout(securedSelfPrognose, 2000); 
 setTimeout(securedSelfDescribeMyMood, 3000); 
+
