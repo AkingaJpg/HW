@@ -1,0 +1,30 @@
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  }
+  
+  .center-button {
+    background-color: white;
+    border: none;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .dark-background {
+    background-image: url("DSC00925.JPG");    
+    color: #ffffff;
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  }
+
+  .secondClass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
