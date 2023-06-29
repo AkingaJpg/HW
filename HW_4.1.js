@@ -12,3 +12,4 @@ console.log(fifthElem);
 const lvlBlockElem = document.getElementsByClassName('hatredLevelBlock');
 console.log(lvlBlockElem);
 
+
