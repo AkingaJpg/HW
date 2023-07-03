@@ -40,8 +40,10 @@ function byProperty(propertyName, sortDirection) {
 }
 
 
-console.log(movies.sort(byProperty('releaseYear', '>')).map(x => x.movieName)); // виведе масив фільмів посортованих по року випуску, від старішого до новішого*
-console.log(movies.sort(byProperty('runningTimeInMinutes', '<')).map(x => x.movieName)); // виведе масив фільмів посортованих по їх тривалості, від найдовшого до найкоротшого*
-console.log(movies.sort(byProperty('movieName', '>')).map(x => x.movieName)); // виведе масив фільмів посортованих по назві, в алфавітному порядку*
+//console.log(movies.sort(byProperty('releaseYear', '>')).map(x => x.movieName)); // виведе масив фільмів посортованих по року випуску, від старішого до новішого*
+//console.log(movies.sort(byProperty('runningTimeInMinutes', '<')).map(x => x.movieName)); // виведе масив фільмів посортованих по їх тривалості, від найдовшого до найкоротшого*
+//console.log(movies.sort(byProperty('movieName', '>')).map(x => x.movieName)); // виведе масив фільмів посортованих по назві, в алфавітному порядку*
 
-
+console.log(movies.sort(byProperty('releaseYear', '>')));
+console.log(movies.sort(byProperty('runningTimeInMinutes', '<')));
+console.log(movies.sort(byProperty('movieName', '>')));

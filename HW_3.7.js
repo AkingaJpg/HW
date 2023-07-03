@@ -5,7 +5,7 @@ function someFunction() {
 }
 
 
-function slower(func, seconds) {
+function slower(seconds) {
     function wrapper(...args) {
         console.log("Chill out, you will get you result in 5 seconds");
         setTimeout(() => someFunction(...args), seconds * 1000);
