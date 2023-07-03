@@ -1,6 +1,6 @@
 "use strict";
 
-function detonatorTimerForSpecialOperations(timeInSeconds) {
+/* function detonatorTimerForSpecialOperations(timeInSeconds) {
     let intervalId;
     const func = () => {
         if (timeInSeconds === 0) {
@@ -14,18 +14,18 @@ function detonatorTimerForSpecialOperations(timeInSeconds) {
     intervalId = setInterval(func, 1000);
 }
 
-detonatorTimerForSpecialOperations(3);
+detonatorTimerForSpecialOperations(3); */
 
 
-/* function detonatorTimer(delay) {
+function detonatorTimer(delay) {
     console.log(delay);
-        if (delay > 0) {
-            delay --;
-            setTimeout(detonatorTimer, 1000, delay);
-        }if(delay === 0) {
-            console.log('BOOM!');
-        }
+    if (delay === 0) {
+        console.log('BOOM!');
+    } if (delay > 0) {
+        delay--;
+        setTimeout(detonatorTimer, 1000, delay);
     }
+}
 
-detonatorTimer(3); */
+detonatorTimer(3);
 

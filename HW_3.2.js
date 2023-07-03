@@ -1,5 +1,6 @@
 function multiply(x) {
     if (!x) {
+      return;
     } else {
       return function(y) {
         return x * y; // Return the multiplication of x and y
