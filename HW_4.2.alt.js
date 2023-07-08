@@ -3,8 +3,11 @@ const text = document.getElementById("parId");
 const state = localStorage.getItem("state") || "light";
 const time = new Date(localStorage.getItem("time")) ?? new Date()
 
+button.addEventListener('click', switchTo);
+initState();
+
 function switchTo() {
-    //const { time } = getState();
+    const { time } = getState();
     let body = document.body;
 
     button.classList.toggle("dark-background");
