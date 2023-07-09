@@ -1,19 +1,20 @@
 const button = document.getElementById("myButton");
 const text = document.getElementById("parId");
-const state = localStorage.getItem("state") || "light";
-const time = new Date(localStorage.getItem("time")) ?? new Date()
+let state = localStorage.getItem("state") || "light";
+let time = new Date(localStorage.getItem("time")) ?? new Date()
+if (state === "dark") {
+    switchTo();
+}
 
 button.addEventListener('click', switchTo);
-initState();
 
 function switchTo() {
-    const { time } = getState();
     let body = document.body;
 
     button.classList.toggle("dark-background");
     body.classList.toggle("dark-background");
 
-    if (button.textContent === "Turn on") {
+    if (state === "dark") {
         button.textContent = "Turn off";
         text.textContent = `Last on time: ${formatDate(time)}`;
         setState({
@@ -41,20 +42,13 @@ function formatDate(date) {
     return `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
 }
 
-function getState() {
-    return {
-        state: localStorage.getItem("state"),
-        time: new Date(localStorage.getItem("time")) ?? new Date()
-    }
+
+
+function setState(currentState) {
+    localStorage.setItem("state", currentState.state);
+    localStorage.setItem("time", currentState.time);
+    time = currentState.time;
+    state = currentState.state;
 }
 
-function setState(state) {
-    localStorage.setItem("state", state.state);
-    localStorage.setItem("time", state.time);
-}
 
-function initState() {
-    if (state === "dark") {
-        switchTo();
-    }
-}
