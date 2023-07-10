@@ -73,13 +73,7 @@ function editOneElement(edit, textElement, editButton) {
 
 
 function renderTasks() {
-    let tasks;
-
-    if (localStorage.getItem('tasks') !== null) {
-        tasks = JSON.parse(localStorage.getItem('tasks'));
-    } else {
-        tasks = [];
-    }
+const tasks = getTasksFromLocalStorage();
 
     tasks.forEach((task) => {
         createSingleTaskElement(task);
