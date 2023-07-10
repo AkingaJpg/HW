@@ -9,7 +9,6 @@ const taskInput = document.querySelector('.task-input');
 document.addEventListener('DOMContentLoaded', renderTasks);
 form.addEventListener('submit', createTask);
 clearBtn.addEventListener('click', clearAllTasks);
-//taskList.addEventListener('click', clearSingleTask);
 
 function getTasksFromLocalStorage() {
     return localStorage.getItem('tasks') !== null ? JSON.parse(localStorage.getItem('tasks')) : [];
@@ -45,7 +44,7 @@ function createSingleTaskElement(task) {
 
 }
 
-function editOneElement(edit, textElement, editButton) {
+function editOneElement(taskElement, textElement, editButton) {
     const editTask = document.createElement('input');
     textElement.remove();
     editButton.remove();
@@ -55,10 +54,10 @@ function editOneElement(edit, textElement, editButton) {
         if (event.key === "Enter") {
             event.preventDefault();
             editTask.remove();
-            console.log(edit.textContent)
+            console.log(taskElement.textContent)
             textElement.textContent = editTask.value;
-            edit.insertBefore(editButton, edit.children[0]);
-            edit.insertBefore(textElement, edit.children[0]);
+            taskElement.insertBefore(editButton, taskElement.children[0]);
+            taskElement.insertBefore(textElement, taskElement.children[0]);
 
             const nodes = Array.prototype.slice.call(taskList.children);
             const index = nodes.indexOf(textElement.parentElement);
@@ -66,8 +65,8 @@ function editOneElement(edit, textElement, editButton) {
         }
     })
 
-    edit.insertBefore(editTask, edit.children[0]);
-    console.log(edit)
+    taskElement.insertBefore(editTask, taskElement.children[0]);
+    console.log(taskElement)
 
 }
 
