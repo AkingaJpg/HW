@@ -1,34 +1,43 @@
 const button = document.getElementById("myButton");
 const text = document.getElementById("parId");
-let state = localStorage.getItem("state") || "light";
+let theme = localStorage.getItem("theme") || "light";
 let time = new Date(localStorage.getItem("time")) ?? new Date()
-if (state === "dark") {
-    switchTo();
-}
 
-button.addEventListener('click', switchTo);
+applyTheme();
 
-function switchTo() {
+button.addEventListener('click', switchTheme);
+
+function applyTheme() {
     let body = document.body;
 
-    button.classList.toggle("dark-background");
-    body.classList.toggle("dark-background");
-
-    if (state === "dark") {
+    if (theme === "dark") {
+        button.classList.add("dark-background");
+        body.classList.add("dark-background");
         button.textContent = "Turn off";
         text.textContent = `Last on time: ${formatDate(time)}`;
-        setState({
-            state: "light",
+    } else {
+        button.classList.remove("dark-background");
+        body.classList.remove("dark-background");
+        button.textContent = "Turn on";
+        text.textContent = `Last off time: ${formatDate(time)}`;
+    }
+}
+
+function switchTheme() {
+    if (theme === "dark") {
+        theme = "light";
+        setTheme({
+            theme: "light",
             time: new Date()
         });
     } else {
-        button.textContent = "Turn on";
-        text.textContent = `Last off time: ${formatDate(time)}`;
-        setState({
-            state: "dark",
+        theme = "dark";
+        setTheme({
+            theme: "dark",
             time: new Date()
         });
     }
+    applyTheme();
 }
 
 function formatDate(date) {
@@ -44,11 +53,10 @@ function formatDate(date) {
 
 
 
-function setState(currentState) {
-    localStorage.setItem("state", currentState.state);
+function setTheme(currentState) {
+    localStorage.setItem("theme", currentState.theme);
     localStorage.setItem("time", currentState.time);
     time = currentState.time;
-    state = currentState.state;
 }
 
 
